@@ -1,18 +1,46 @@
 package com.example.foodycookbook;
 
-public class Food {
-    private int imageResource;
-    private String text1;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-    public Food(int imageResource, String text1) {
+public class Food {
+    public void setImageResource(String imageResource) {
         this.imageResource = imageResource;
-        this.text1 = text1;
+    }
+
+    private String imageResource;
+
+    public void setStrMeal(String strMeal) {
+        this.strMeal = strMeal;
+    }
+
+    private String strMeal;
+    private String strMealThumb;
+
+    public Food() {
 
     }
-    public int getImageResource() {
+    public Food(String imageResource, String strMeal) {
+        this.imageResource = imageResource;
+        this.strMeal = strMeal;
+        this.strMealThumb = strMeal;
+
+    }
+    public String getImageResource() {
         return imageResource;
     }
     public String getText1() {
-        return text1;
+        return strMeal;
+}
+
+public static Food getFoodFromJson(JSONObject jsonObject){
+        Food foodItem=new Food();
+    try {
+        foodItem.setImageResource(jsonObject.getString("strMealThumb"));
+        foodItem.setStrMeal(jsonObject.getString("strMeal"));
+    } catch (JSONException e) {
+        e.printStackTrace();
+    }
+return foodItem;
 }
 }

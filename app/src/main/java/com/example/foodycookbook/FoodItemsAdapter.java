@@ -1,5 +1,8 @@
 package com.example.foodycookbook;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,15 +16,21 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 public class FoodItemsAdapter extends RecyclerView.Adapter<FoodItemsAdapter.FoodViewHolder> implements Filterable {
     private List<Food> foodList;
     private List<Food> foodListFull;
-
-    public FoodItemsAdapter(List<Food> foodList) {
+    Context context;
+    public FoodItemsAdapter(Context context, List<Food> foodList) {
         this.foodList = foodList;
         foodListFull = new ArrayList<>(foodList);
+        this.context=context;
     }
 
     @NonNull
@@ -35,7 +44,10 @@ public class FoodItemsAdapter extends RecyclerView.Adapter<FoodItemsAdapter.Food
     @Override
     public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
         Food currentItem = foodList.get(position);
-        holder.imageView.setImageResource(currentItem.getImageResource());
+
+        Glide.with(context).load(currentItem.getImageResource()).placeholder(R.drawable.ic_action_food).into(holder.imageView);
+
+//        holder.imageView.setImage(currentItem.getImageResource());
         holder.textView1.setText(currentItem.getText1());
 
     }
