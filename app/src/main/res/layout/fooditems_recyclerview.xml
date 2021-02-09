@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    app:cardBackgroundColor="#FFFFFF"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/linearlayout1"
+        android:layout_height="150dp"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="140dp"
+            android:padding="8dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_centerVertical="true"
+            android:id="@+id/foodimage"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/foodname"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginRight="120dp"
+            />
+        <Button
+            android:id="@+id/favourites"
+            android:layout_width="100dp"
+            android:text="Add to Favourites"
+            android:layout_height="50dp"
+            android:padding="1dp"
+            android:background="@drawable/button_style"
+            android:layout_marginLeft="270dp"
+            android:layout_marginTop="90dp"
+            android:textSize="12dp"
+            android:textColor="#FFFFFF" />
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
