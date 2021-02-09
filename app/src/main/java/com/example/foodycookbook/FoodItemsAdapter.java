@@ -26,6 +26,8 @@ import java.util.List;
 public class FoodItemsAdapter extends RecyclerView.Adapter<FoodItemsAdapter.FoodViewHolder> implements Filterable {
     private List<Food> foodList;
     private List<Food> foodListFull;
+    static ArrayList<String> foodname = new ArrayList<>();
+
     Context context;
     public FoodItemsAdapter(Context context, List<Food> foodList) {
         this.foodList = foodList;
@@ -46,10 +48,9 @@ public class FoodItemsAdapter extends RecyclerView.Adapter<FoodItemsAdapter.Food
         Food currentItem = foodList.get(position);
 
         Glide.with(context).load(currentItem.getImageResource()).placeholder(R.drawable.ic_action_food).into(holder.imageView);
-
 //        holder.imageView.setImage(currentItem.getImageResource());
         holder.textView1.setText(currentItem.getText1());
-
+        foodname.add(currentItem.getText1());
     }
 
     @Override
@@ -99,6 +100,7 @@ public class FoodItemsAdapter extends RecyclerView.Adapter<FoodItemsAdapter.Food
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(view.getContext(), "Items added to favourites list", Toast.LENGTH_SHORT).show();
+                    String name = foodname.get(getAdapterPosition());
                 }
             });
 

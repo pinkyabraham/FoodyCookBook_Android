@@ -28,14 +28,6 @@
         android:layout_marginBottom="50dp"
         android:id="@+id/recyclerview" />
 
-<!--    <Button-->
-<!--        android:id="@+id/addtocart"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="45dp"-->
-<!--        android:backgroundTint="@color/appcolor"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginBottom="5dp"-->
-<!--        android:text="ADD TO CART"-->
-<!--        android:textColor="#FFFFFF" />-->
+
 
 </RelativeLayout>
